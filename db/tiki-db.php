@@ -80,6 +80,7 @@ if ($connectionString && preg_match('/^Database=(?P<dbs>.+);Data Source=(?P<host
 unset($host_map, $db_tiki, $host_tiki, $user_tiki, $pass_tiki, $dbs_tiki, $shadow_user, $shadow_pass, $shadow_host, $shadow_dbs);
 
 global $systemConfiguration;
+
 $systemConfiguration = new Zend_Config(
 	array(
 		'preference' => array(
@@ -246,9 +247,4 @@ if ($credentials['shadow']) {
 	}
 }
 
-/**
- * @param $db
- */
-function init_connection( $db )
-{
-}
+unset($credentials);
