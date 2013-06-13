@@ -1,0 +1,242 @@
+---
+preferences: 
+objects: 
+  - 
+    type: category
+    ref: project
+    _id: 2
+    data: 
+      name: Project
+      parent: $profileobject:workspaces$
+  - 
+    type: category
+    ref: workspaces
+    _id: 1
+    data: 
+      name: Workspaces
+  - 
+    type: tracker
+    ref: bugs
+    _id: 1
+    data: 
+      name: Bugs
+      description: Standard bug tracker
+      allow: 
+        - attachments
+        - comments
+      show: 
+        - creation_date
+        - list_modification_date
+        - modification_date
+        - status
+  - 
+    type: tracker_field
+    ref: bugs_bug_tracker_summary
+    _id: 1
+    data: 
+      name: Summary
+      permname: bug_tracker_summary
+      tracker: $profileobject:bugs$
+      options: 
+        samerow: 1
+      type: text_field
+      order: 10
+      flags: 
+        - link
+        - searchable
+        - public
+        - mandatory
+  - 
+    type: tracker_field
+    ref: bugs_bug_tracker_priority
+    _id: 2
+    data: 
+      name: Priority
+      permname: bug_tracker_priority
+      tracker: $profileobject:bugs$
+      options: 
+        options: 
+          - 5 (High)
+          - 4
+          - 3
+          - 2
+          - 1
+      type: dropdown
+      order: 20
+      flags: 
+        - searchable
+        - public
+  - 
+    type: tracker_field
+    ref: bugs_bug_tracker_description
+    _id: 3
+    data: 
+      name: Description
+      permname: bug_tracker_description
+      tracker: $profileobject:bugs$
+      options: 
+        toolbars: 1
+        samerow: 1
+      type: text_area
+      order: 30
+      flags: 
+        - public
+        - mandatory
+  - 
+    type: tracker_field
+    ref: bugs_bug_tracker_assignee
+    _id: 4
+    data: 
+      name: Assigned to
+      permname: bug_tracker_assignee
+      tracker: $profileobject:bugs$
+      options: 
+      type: user
+      order: 40
+      flags: 
+        - searchable
+        - public
+  - 
+    type: tracker_field
+    ref: bugs_project
+    _id: 5
+    data: 
+      name: Project
+      permname: project
+      tracker: $profileobject:bugs$
+      options: 
+        parentId: $profileobject:project$
+        inputtype: d
+      type: category
+      order: 50
+      flags: 
+        - public
+  - 
+    type: tracker_field
+    ref: bugs_junkCalculatio
+    _id: 10
+    data: 
+      name: Junk Calculation
+      permname: junkCalculatio
+      tracker: $profileobject:bugs$
+      options: 
+        calculation: (coalesce 0 bug_tracker_priority 1337)
+      type: math
+      order: 70
+      flags: 
+        - public
+  - 
+    type: tracker_field
+    ref: bugs_newField
+    _id: 11
+    data: 
+      name: New Field
+      permname: newField
+      tracker: $profileobject:bugs$
+      options: 
+        samerow: 1
+      type: text_field
+      order: 80
+      flags: 
+        - public
+  - 
+    type: tracker
+    ref: hello_world
+    _id: 2
+    data: 
+      name: Information
+      description: 
+      restrict_end: 0
+      section_format: flat
+      restrict_start: 0
+      show: 
+        - status
+  - 
+    type: tracker_field
+    ref: hello_world_bug
+    _id: 7
+    data: 
+      name: Bug
+      permname: bug
+      tracker: $profileobject:hello_world$
+      options: 
+        trackerId: $profileobject:bugs$
+        fieldId: $profileobject:bugs_bug_tracker_summary$
+        displayFieldsList: 
+          - $profileobject:bugs_bug_tracker_summary$
+          - |
+            $profileobject:bugs_bug_tracker_assignee$
+            
+          - $profileobject:bugs_project$
+        status: opc
+        linkPage: $unknownobject:51a368e895bd0$
+        preSelectFieldMethod: exact
+        displayOneItem: multi
+        indexRemote: 
+          - |
+            $profileobject:bugs_bug_tracker_priority$
+            
+      type: item_link
+      order: 0
+      flags: 
+        - public
+  - 
+    type: tracker_field
+    ref: hello_world_text
+    _id: 6
+    data: 
+      name: Text
+      permname: text
+      tracker: $profileobject:hello_world$
+      options: 
+        samerow: 1
+      type: text_area
+      order: 10
+      flags: 
+        - link
+        - public
+        - mandatory
+  - 
+    type: tracker_field
+    ref: hello_world_owners
+    _id: 8
+    data: 
+      name: Owners
+      permname: owners
+      tracker: $profileobject:hello_world$
+      options: 
+        autoassign: 1
+        assign: 1
+      type: group
+      order: 20
+      flags: 
+        - public
+  - 
+    type: tracker_option
+    ref: hello_world_sort_default_field
+    _id: sort_default_field-2
+    data: 
+      tracker: $profileobject:hello_world$
+      name: sort_default_field
+      value: modification
+  - 
+    type: tracker_field
+    ref: bugs_similar
+    _id: 9
+    data: 
+      name: Similar
+      permname: similar
+      tracker: $profileobject:bugs$
+      options: 
+        relation: bug.triage.similar
+        filter: tracker_id=$profileobject:bugs$
+        display: toggle
+      type: relation
+      order: 60
+      flags: 
+        - public
+unknown_objects: 
+  - 
+    type: wiki_page
+    id: SomeItem
+    token: $unknownobject:51a368e895bd0$

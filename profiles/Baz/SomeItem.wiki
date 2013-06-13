@@ -1,0 +1,18 @@
+This should be a pretty tracker template or something.
+
+Not quite right now.
+
+{trackerlist trackerId="3" fields="12:13:14"}
+{trackerfilter trackerId="3" fields="12:13:14" filters="12/t:13/d"}
+
+Some Text
+
+{trackerlist trackerId="$profileobject:HelloWorld:info$"}
+
+More Text
+
+{addfreetag object="tracker:3"}
+
+{categorytransition objType="tracker" objId="3"}
+
+{$f_13}

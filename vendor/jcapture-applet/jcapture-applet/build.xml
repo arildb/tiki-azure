@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="build">
+	<target name="build">
+		<delete dir="build" failonerror="false" />
+		<mkdir dir="build/jcapture" />
+
+		<delete file="lib/jcapture.jar" failonerror="false" />
+
+		<!-- jdraw.jar -->
+		<javac srcdir="src" debug="on" destdir="build/jcapture">
+			<classpath>
+				<fileset dir="lib" includes="*.jar"/>
+				<fileset dir="C:\Program Files\Java\jre7\lib" includes="plugin.jar"/>
+			</classpath>
+		</javac>
+
+		<jar destfile="lib/jcapture.jar">
+			<fileset dir="build/jcapture" />
+			<fileset dir="src" excludes="**/*.java" />
+			<manifest>
+				<attribute name="Vendor" value="Hammurapi Group" />
+				<attribute name="Bundle-Version" value="2.0" />
+				<attribute name="Bundle-SymbolicName" value="com.hammurapi.jcapture" />
+				<attribute name="Class-Path" value="apache-mime4j-0.6.jar commons-codec-1.3.jar	commons-logging-1.1.1.jar httpclient-4.0.1.jar httpcore-4.0.1.jar httpmime-4.0.1.jar transform-3.0.2.jar" />
+			</manifest>
+		</jar>
+
+		<delete dir="build/signed" failonerror="false"/>
+		<mkdir dir="build/signed"/>
+		
+		<signjar 
+			destDir="build/signed"
+    		alias="${alias}" 
+    		keystore="${keystore}"
+			storetype="PKCS12"			
+    		storepass="${storepass}"
+    		preservelastmodified="true">
+    		
+  			<path>
+    			<fileset dir="lib" includes="*.jar" />
+  			</path>
+		</signjar>		
+		
+		<property name="releaseDir" value="..\..\release\jcapture" />
+		
+		<delete dir="${releaseDir}" failonerror="false" />
+		<mkdir dir="${releaseDir}"/>
+
+		<zip destfile="${releaseDir}\jcapture.zip">
+			<zipfileset prefix="jcapture/" dir="${basedir}" excludes=".classpath, .project, bin/**, build/**, wink, build.xml, lib/**" />
+			<zipfileset prefix="jcapture/lib" dir="${basedir}/build/signed" />
+		</zip>
+
+		<copy todir="${releaseDir}">
+			<fileset dir="${basedir}" includes="wink/**" />
+		</copy>
+	</target>
+</project>

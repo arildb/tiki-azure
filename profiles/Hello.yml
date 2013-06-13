@@ -1,0 +1,16 @@
+---
+preferences: 
+objects: 
+  - 
+    type: category
+    ref: e
+    _id: 16
+    _timestamp: 1369928650
+    data: 
+      name: E
+      parent: $unknownobject:51a773ca06620$
+unknown_objects: 
+  - 
+    type: category
+    id: 10
+    token: $unknownobject:51a773ca06620$

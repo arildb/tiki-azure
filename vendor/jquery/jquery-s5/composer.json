@@ -1,0 +1,18 @@
+{
+    "name": "jquery/jquery-s5",
+    "description": "jQuery's s5 implementation. Used to create sideshows in web browsers",
+    "type": "library",
+    "keywords": ["s5", "javascript", "slideshow"],
+    "homepage": "http://code.google.com/p/jquerys5/",
+    "license": "LGPL",
+    "authors": [
+        {
+            "name": "Robert Plummer",
+            "homepage": "http://visop-dev.com/"
+        },
+        {
+            "name": "Marc Laporte",
+             "homepage": "http://marclaporte.com"
+         }
+    ]
+}

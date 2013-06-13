@@ -1,0 +1,71 @@
+Date: Mon, 11 Feb 2013 16:59:11 +0000
+X-Tiki: =?UTF-8?Q?yes?=
+From: lp@huberdeau.info
+Reply-To: lp@huberdeau.info
+Subject: =?UTF-8?Q?Wiki=20page=20HomePage=20changed=20by=20anonymous?=
+MIME-Version: 1.0
+Content-Type: =?UTF-8?Q?text/plain?=
+Content-Transfer-Encoding: =?UTF-8?Q?8bit?=
+To: lp@huberdeau.info
+
+The page HomePage was changed by anonymous at 2013-02-11 11:59
+
+
+You can view the page by following this link:
+ 
+http://tiki/trunk/tiki-index.php?page=HomePage
+
+You can view a diff back to the previous version by following this link: 
+http://tiki/trunk/tiki-pagehistory.php?page=HomePage&compare=1&oldver=29&newver=30
+
+	If you don't want to receive these notifications follow this link:
+	http://tiki/trunk/tiki-user_watches.php?id=4
+
+***********************************************************
+The changes in this version follow below, followed after by the current full page text.
+***********************************************************
+
+
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+@@ -Lines: 1-5 changed to +Lines: 1-2 @@
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+- email: lphuberdeau@gmail.com
+- Test
+- __test
+
+{LISTEXECUTE()}
+
+
+
+
+***********************************************************
+The new page content follows below.
+***********************************************************
+
+
+{LISTEXECUTE()}
+  {filter type="trackeritem"}
+  {pagination offset_arg=abcdefg max=5}
+{FORMAT(name=foobar)}{display name=title format=objectlink} Contact us at lphuberdeau@gmail.com !{FORMAT}
+
+  {ACTION(name=Email group=Registered)}
+    {step action=email
+      replyto=lph@tiki.org
+      to_field_multiple="me,myself"
+      subject="Hello World!"
+      content_field=foobar}
+  {ACTION}
+
+  {ACTION(name=Reset)}
+    {step action=change_status from=c to=o}
+  {ACTION}
+  {FORMAT(name=me)}lp@huberdeau.info{FORMAT}
+  {FORMAT(name=myself)}louis@huberdeau.info{FORMAT}
+{LISTEXECUTE}
+
+{modulelist zone=foobar}
+{modulelist zone=baz}
+...page...
+{modulelist}
+
+((PageA))

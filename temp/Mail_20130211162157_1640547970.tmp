@@ -1,0 +1,13 @@
+Date: Mon, 11 Feb 2013 16:21:57 +0000
+X-Tiki: =?UTF-8?Q?yes?=
+From: lp@huberdeau.info
+Reply-To: lph@tiki.org
+
+Subject: =?UTF-8?Q?Hello=20World!?=
+MIME-Version: 1.0
+Content-Type: =?UTF-8?Q?text/html?=
+Content-Transfer-Encoding: =?UTF-8?Q?8bit?=
+To: lp@huberdeau.info,
+ louis@huberdeau.info
+
+&lt;img src="img/icons/status_open.gif" alt="open"/&gt;&nbsp;&lt;a href="http://tiki/trunk/tiki-view_tracker_item.php?itemId=1" class="" data-type="trackeritem" data-object="1"&gt;Sample bug..&lt;/a&gt; Contact us at <a class='wiki' href="mailto:lphuberdeau@gmail.com">lphuberdeau@gmail.com</a> !<br />

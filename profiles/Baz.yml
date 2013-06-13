@@ -1,0 +1,60 @@
+---
+preferences: 
+  trackerfield_computed: true
+  unified_elastic_url: http://192.168.56.1:9200
+  feature_trackers: true
+  payment_feature: true
+  feature_freetags: false
+objects: 
+  - 
+    type: wiki_page
+    ref: someitem
+    data: 
+      name: SomeItem
+      content: wikicontent:SomeItem
+      description: 
+      lang: en
+  - 
+    type: tracker
+    ref: hello_world
+    data: 
+      name: Hello World
+      description: 
+      restrict_end: 0
+      section_format: flat
+      restrict_start: 0
+  - 
+    type: tracker_field
+    ref: hello_world_title
+    data: 
+      name: Title
+      permname: title
+      tracker: $profileobject:hello_world$
+      options: 
+        samerow: 1
+      type: text_field
+      order: 10
+      flags: 
+        - link
+        - public
+        - mandatory
+  - 
+    type: tracker_field
+    ref: hello_world_something
+    data: 
+      name: Something
+      permname: something
+      tracker: $profileobject:hello_world$
+      options: 
+        samerow: 1
+      type: text_field
+      order: 20
+      flags: 
+        - public
+  - 
+    type: tracker_option
+    ref: hello_world_sort_default_field
+    data: 
+      tracker: $profileobject:hello_world$
+      name: sort_default_field
+      value: modification

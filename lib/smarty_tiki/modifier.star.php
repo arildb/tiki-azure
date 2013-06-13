@@ -1,0 +1,17 @@
+<?php
+// (c) Copyright 2002-2013 by authors of the Tiki Wiki CMS Groupware Project
+//
+// All Rights Reserved. See copyright.txt for details and a complete list of authors.
+// Licensed under the GNU LESSER GENERAL PUBLIC LICENSE. See license.txt for details.
+// $Id: modifier.star.php 44444 2013-01-05 21:24:24Z changi67 $
+
+function smarty_modifier_star($score)
+{
+	global $prefs, $tikilib;
+
+	if ($prefs['feature_score'] != 'y') {
+		return '';
+	}
+
+	return $tikilib->get_star($score);
+}

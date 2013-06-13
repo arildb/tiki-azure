@@ -1,0 +1,3 @@
+"192.168.56.1",2012-04-29T19:58:42+00:00,10,"xss csrf id rfe","REQUEST.query%3Djavascript%253Adie%2528%2529+GET.query%3Djavascript%253Adie%2528%2529","%2Ftrunk%2Ftiki-index.php%3Fquery%3Djavascript%3Adie%28%29","192.168.56.101"
+"192.168.56.1",2012-04-29T19:58:43+00:00,10,"xss csrf id rfe","REQUEST.query%3Djavascript%253Adie%2528%2529+GET.query%3Djavascript%253Adie%2528%2529","%2Ftrunk%2Ftiki-index.php%3Fquery%3Djavascript%3Adie%28%29","192.168.56.101"
+"192.168.56.1",2012-04-29T19:58:44+00:00,10,"xss csrf id rfe","REQUEST.query%3Djavascript%253Adie%2528%2529+GET.query%3Djavascript%253Adie%2528%2529","%2Ftrunk%2Ftiki-index.php%3Fquery%3Djavascript%3Adie%28%29","192.168.56.101"

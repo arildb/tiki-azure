@@ -1,0 +1,22 @@
+{
+    "name": "jcapture-applet/jcapture-applet",
+    "description": "jCapture is an applet to capture screenshots or record audio/screen",
+    "type": "library",
+    "keywords": ["java", "applet", "screenshot", "screencapture"],
+    "homepage": "http://sourceforge.net/p/jcapture-applet/",
+    "license": "LGPL",
+    "authors": [
+        {
+            "name": "Pavel Vlasov",
+            "homepage": "http://www.hammurapi.com/"
+        },
+        {
+            "name": "Jonny Bradley",
+            "homepage": "http://tiki.org/UserPageJonnyBradley"
+        },
+        {
+            "name": "Marc Laporte",
+             "homepage": "http://marclaporte.com"
+         }
+    ]
+}
